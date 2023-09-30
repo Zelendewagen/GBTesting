@@ -21,6 +21,7 @@ class VehicleTest {
     Car car;
     Motorcycle motorcycle;
 
+
     @BeforeEach
     void setUp() {
         car = new Car("yotota", "test", 2020);
