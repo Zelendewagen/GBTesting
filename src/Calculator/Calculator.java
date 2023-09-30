@@ -1,6 +1,19 @@
 package Calculator;
 
+import java.util.Scanner;
+
 public class Calculator {
+
+    private static final Scanner scanner = new Scanner(System.in);
+
+    public static void main(String[] args) {
+        int firstOperand = getOperand();
+        int secondOperand = getOperand();
+        char operator = getOperator();
+        int result = calculation(firstOperand, secondOperand, operator);
+        System.out.println(result );
+    }
+
     public static int calculation(int firstOperand, int secondOperand, char operator) {
         int result;
 
@@ -54,5 +67,17 @@ public class Calculator {
         } else result = purchaseAmount - purchaseAmount * discountAmount / 100;
 
         return result; // Метод должен возвращать сумму покупки со скидкой
+    }
+
+    public static char getOperator() {
+        System.out.println("Введите действие: ");
+        char operation = scanner.next().charAt(0);
+        return operation;
+    }
+
+    public static int getOperand() {
+        System.out.println("Введите число: ");
+        int operand = scanner.nextInt();
+        return operand;
     }
 }
